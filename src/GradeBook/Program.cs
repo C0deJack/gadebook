@@ -5,24 +5,16 @@ namespace GradeBook
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var book = new Book();
+            var book = new Book("Tom's grades");
 
-            List<double> grades = new List<double>() {11.5, 9.5, 8.0, 11.1, 40.3};
+            book.AddGrade(55.1);
+            book.AddGrade(14.1);
+            book.AddGrade(5.1);
+            book.AddGrade(88.0);
 
-            grades.Add(20.2);
-
-            var results = 0.0;
-
-            foreach(var number in grades)
-            {
-              results += number;
-            }
-
-            results /= grades.Count; 
-
-            Console.WriteLine($"The average grade is {results:N1}");
+            book.ShowStats();
         }
     }
 
